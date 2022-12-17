@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <title>你是哪個吉卜力角色?</title>
+    <meta name="viewport" content="width=device-width;initial-scale=1.0;minimum-scale=0.5;maximum-scale=2.0;user-scalable=yes"/>
+</head>
+
+<style>
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -999;
+    }
+    
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 1000px;
+    height: 100px;
+    }
+    
+.audio {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    }
+
+body { 
+   opacity: 0;
+   transition: opacity .5s;
+}
+</style>
+<script>
+window.transitionToPage = function(href) {
+    document.querySelector('body').style.opacity = 0
+    setTimeout(function() { 
+        window.location.href = href
+    }, 500)
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+    document.querySelector('body').style.opacity = 1
+})
+ 
+function play_music(){
+    document.getElementById("bg1").play();
+}
+
+function play_sound(){
+    document.getElementById("sound").play();
+}
+   
+window.onload=play_music();
+
+</script>
+<body>
+    <div class="bg">
+        <img src="images/bg2.jpg">
+    </div>
+    
+    <div class= "audio">
+        <audio controls autoplay id="bg1">
+        <source src="sound/bg1.mp3" type="audio/mpeg">
+    </audio>
+    </div>
+    
+    <div class= "audio1">
+        <audio autoplay id="sound">
+        <source src="sound/button03a.mp3" type="audio/mpeg">
+    </audio>
+    </div>
+    
+    <div class="title" style= "text-align: center; vertical-align: middle">
+        <font size="10" align= "center" color= "white">測試你是哪個吉卜力角色?</font>
+        <p align= "center">
+        <h3 align= "center" style="color:#FFFFF0;font-size: 20pt;font-family:fantasy">請選出最符合你的答案</h3>
+        
+    <div class="btn"><button onclick="transitionToPage('Q1.html');play_sound()" style= "color: #0099CC; 
+      background: #537697; border: 2px solid white; border-radius: 6px; color: white; padding: 16px 32px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;">開始測驗</button>
+        
+        </div>
+    </div>
+    </body>
+</html>

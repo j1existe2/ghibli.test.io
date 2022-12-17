@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width;initial-scale=1.0;minimum-scale=0.5;maximum-scale=2.0;user-scalable=yes"/>
+    <meta charset="UTF-8">
+    <title>Question2</title>
+    <link rel="stylesheet" type="text/css" href="css/csstyle.css">
+</head>
+
+<style>
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -999;
+    }
+    
+.title {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 1000px;
+    height: 100px;
+    }
+.btn {
+ position: absolute;
+    top: 100%;
+    left: 20%;
+    margin-top: 50px;
+    margin-left: -50px;
+    width: 1000px;
+    height: 100px;        
+    }
+body { 
+   opacity: 100;
+   transition: opacity .5s;
+}
+</style>
+<script>
+window.transitionToPage = function(href) {
+    document.querySelector('body').style.opacity = 0
+    setTimeout(function() { 
+        window.location.href = href
+    }, 500)
+}
+
+function play_sound(){
+    document.getElementById("sound").play();
+}
+</script>
+<body>
+    <div class= "audio">
+    <audio id="sound">
+        <source src="sound/crrect_answer1.mp3" type="audio/mpeg">
+    </audio>
+    </div>
+    <div class="title">
+        <font size="10" color= "white" align = "center">測試你是哪個吉卜力角色?</font><br>
+        <font size="6" style="color:#556B2F;background-color:#FFFF4D" align= "center">第二題</font><br>
+        <font size="4" style="color:#FFFF4D;background-color:#556B2F" align= "center">你最想擁有的超能力是？</font>
+    <div class= "btn">
+        <button onclick="transitionToPage('Q3AA.html');play_sound()" style= "color: #0099CC; 
+      background: #eeeeee; border: 2px solid white; border-radius: 6px; color: #537697; padding: 16px 60px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;" value="1">系統語言是拉丁文的讀心術</button><br>
+      <button onclick= "transitionToPage('Q3AB.html');play_sound()" style= "color: #0099CC; 
+      background: #eeeeee; border: 2px solid white; border-radius: 6px; color: #537697; padding: 16px 60px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;">使用後對於內容只有30秒記憶時間的預知能力</button><br>
+      <button onclick="transitionToPage('Q3AC.html');play_sound()" style= "color: #0099CC; 
+      background: #eeeeee; border: 2px solid white; border-radius: 6px; color: #537697; padding: 16px 60px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;">只能前往去過的地方的瞬移能力</button><br><br>
+
+    <div class="bg">
+        <img src="images/bg4.webp">
+    </div>
+    
+        </div>
+    </div>
+    </body>

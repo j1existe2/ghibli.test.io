@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width;initial-scale=1.0;minimum-scale=0.5;maximum-scale=2.0;user-scalable=yes"/>
+    <meta charset="UTF-8">
+    <title>Ghibli_Result3</title>
+    <link rel="stylesheet" type="text/css" href="css/csstyle.css">
+</head>
+
+<style>
+
+  
+.title {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    margin-top: -50px;
+    margin-left: 50px;
+    width: 1000px;
+    height: 100px;
+    }
+.btn {
+ position: absolute;
+    top: 100%;
+    left: 20%;
+    margin-top: 50px;
+    margin-left: -150px;
+    width: 1000px;
+    height: 100px;        
+    }
+    
+body { 
+   opacity: 100;
+   transition: opacity .5s;
+}
+.result{
+        visibility: hidden
+    }
+    img{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    margin-top: -20px;
+    margin-left: -50px;
+    width: 50px;
+    height:50px;
+    }
+    #pic{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    margin-top: -40px;
+    margin-left: -750px;
+    width: 300px;
+    height:300px;
+    }
+    
+    #photo{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 190vw;
+    height:190vh;
+    z-index: -999;
+    }
+</style>
+<script>
+window.transitionToPage = function(href) {
+    document.querySelector('body').style.opacity = 0
+    setTimeout(function() { 
+        window.location.href = href
+    }, 500)
+}
+
+
+    function show(){
+        document.getElementById("send").style.visibility="hidden";
+        document.getElementById("title").style.visibility="visible";
+        document.getElementById("words").style.visibility="visible";
+        document.getElementById("pic").style.visibility="visible";
+    }
+    
+    let n=-1;
+    let N=15;
+    let name=new Array(N);
+    for(let i=0; i < N; i++){
+        name[i]="c"+i.toString();
+    }
+    
+    function jump(){
+        back();
+        let idx=Math.floor(Math.random()*6);
+        document.getElementById(name[idx]).style.top="-330px";
+    }
+    
+    function next(){
+        back();
+        n=(n+1)%15;
+        let idx=n;
+        document.getElementById(name[idx]).style.top="-330px";
+    }
+    
+    function back(){
+        document.getElementById("c0").style.left="-250px";
+        document.getElementById("c0").style.top="-300px";
+        
+        document.getElementById("c1").style.left="-200px";
+        document.getElementById("c1").style.top="-300px";
+        
+        document.getElementById("c2").style.left="-150px";
+        document.getElementById("c2").style.top="-300px";
+        
+        document.getElementById("c3").style.left="-100px";
+        document.getElementById("c3").style.top="-300px";
+
+        document.getElementById("c4").style.left="-50px";
+        document.getElementById("c4").style.top="-300px";
+
+        document.getElementById("c5").style.left="0px";
+        document.getElementById("c5").style.top="-300px";
+        
+        document.getElementById("c6").style.left="50px";
+        document.getElementById("c6").style.top="-300px";
+        
+        document.getElementById("c7").style.left="100px";
+        document.getElementById("c7").style.top="-300px";
+        
+        document.getElementById("c8").style.left="150px";
+        document.getElementById("c8").style.top="-300px";
+        
+        document.getElementById("c9").style.left="200px";
+        document.getElementById("c9").style.top="-300px";
+        
+        document.getElementById("c10").style.left="250px";
+        document.getElementById("c10").style.top="-300px";
+        
+        document.getElementById("c11").style.left="300px";
+        document.getElementById("c11").style.top="-300px";
+        
+        document.getElementById("c12").style.left="350px";
+        document.getElementById("c12").style.top="-300px";
+        
+        document.getElementById("c13").style.left="400px";
+        document.getElementById("c13").style.top="-300px";
+        
+        document.getElementById("c14").style.left="450px";
+        document.getElementById("c14").style.top="-300px";
+    }
+    
+    function wave(){
+        setInterval(next,167);
+    }
+
+    function play_music(){
+        document.getElementById("bgm").play();
+    }
+    
+    function play_sound(){
+    document.getElementById("sound").play();
+}
+
+window.onload=wave();
+</script>
+<body style="background-color:#DE3163;">
+    <div class="title">
+        <font size="10" color= "white" align = "center"></font><br>
+        <font size="6" style="color:#FFE4E1" align= "center">在吉卜力動畫裡你是...</font><br>
+    <div class= "btn">
+    <button id="send" onclick="play_music();show()" style= "color: #0099CC; 
+      background: #eeeeee; border: 2px solid white; border-radius: 6px; color: #537697; padding: 16px 60px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;">點擊查看結果</button><br>
+      <div class="btn"><button onclick="transitionToPage('main_page.html');play_sound()" style= "color: #0099CC; 
+      background: #537697; border: 2px solid white; border-radius: 6px; color: white; padding: 16px 32px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;">再測一次</button>
+    
+    <div class="audio">
+    <audio id="sound">
+        <source src="sound/crrect_answer1.mp3" type="audio/mpeg">
+    </audio>
+       <audio id="bgm" loop><source src="sound/M_Ponyo.mp3" type="audio/mpeg">
+    </audio>
+    </div>
+    <div class="motion">
+       <p>
+        <img id="c0" src="images/G0_robot.png" width="50px" style="left: -250px;top: -300px">
+        <img id="c1" src="images/G1_Aily.png" width="50px" style="left: -200px;top: 100px">
+        <img id="c2" src="images/G2_Baru.png" width="50px" style="left: -150px;top: -300px">
+        <img id="c3" src="images/G3_black.png" width="50px" style="left: -100px;top: -300px">
+        <img id="c4" src="images/G4_Calcifer.png" width="50px" style="left: -50px;top: -300px">
+        <img id="c5" src="images/G5_cat%20baron.png" width="50px" style="left: 0px;top: -300px">
+        <img id="c6" src="images/G6_Chichi.png" width="50px" style="left: 50px;top: 100px">
+        <img id="c7" src="images/G7_Chihiro.png" width="50px" style="left: 100px;top: 100px">
+        <img id="c8" src="images/G8_Hatter.png" width="50px" style="left: 150px;top: 100px">
+        <img id="c9" src="images/G9_Her.png" width="50px" style="left: 200px;top: 100px">
+        <img id="c10" src="images/G10_Hita.png" width="50px" style="left: 250px;top: 100px">
+        <img id="c11" src="images/G11_Ponyo.png" width="50px" style="left: 300px;top: 100px">
+        <img id="c12" src="images/G12_Sophie.png" width="50px" style="left: 350px;top: 100px">
+        <img id="c13" src="images/G13_Toto.png" width="50px" style="left: 400px;top: 100px">
+        <img id="c14" src="images/G14_Whitedragon.png" width="50px" style="left: 450px;top: 100px">
+       </p>
+    </div>
+    <div class="result">
+        <p id="title" style="color:#FFD9E6;font-size: 20pt">《崖上的波妞》波妞</p>
+        <p id="words" style="color:#FFD9E6;font-size: 15pt">
+            你如同波妞一般，個性十分純真，對於自由，不僅嚮往，<br>
+            也有堅持，不喜歡無謂的規則或制度。平時行事積極主動，只要一有想法，<br>
+            就會馬上付諸行動，腦海裡常有新穎的想法，行為舉止也常與眾不同。<br>
+            除了對世界上每一樣事物都懷抱強烈的好奇心以外，<br>
+            對自己本身的探索也從未停止過。
+        </p>
+        <div class="pic">
+            <img id="pic" src="images/C3_Ponyo.png" width= "300px">
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="bg">
+        <img id="photo" max-width="100%" src="images/bg6.jpg">
+    </div>
